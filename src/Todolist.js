@@ -26,12 +26,12 @@ const Todolist= memo(function Todolist() {
      },[])
 
      useEffect(() => {
-        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        const todos = JSON.parse(window.localStorage.getItem('todos')) || [];
         setTodos(todos);
     },[])
 
     useEffect(()=> {
-        localStorage.setItem('todos',JSON.stringify(todos))
+        window.localStorage.setItem('todos',JSON.stringify(todos))
     },[todos])
   return ( 
     <div>
